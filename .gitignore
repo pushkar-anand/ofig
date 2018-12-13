@@ -1,0 +1,19 @@
+# ignoring IDE files
+.idea/
+
+# ignoring cmake dirs
+cmake-build-debug/
+cmake-build-release/
+
+/libraries/sciter-sdk/demos/
+/libraries/sciter-sdk/lib/
+/libraries/sciter-sdk/doc/
+/libraries/sciter-sdk/sqlite/
+/libraries/sciter-sdk/widgets/
+/libraries/sciter-sdk/notepad/
+/libraries/sciter-sdk/notes/
+/libraries/sciter-sdk/samples/
+/libraries/sciter-sdk/demos.android/
+/libraries/sciter-sdk/demos.osx/
+/libraries/sciter-sdk/demos.GLFW/
+/libraries/sciter-sdk/demos.win/

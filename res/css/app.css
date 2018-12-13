@@ -1,0 +1,26 @@
+html:theme(dark) {
+var(text-color): #fff;
+var(back-color): #000;
+var(disbaled-color): #aaa;
+}
+
+html {
+var(accent-color): window-accent-color;
+    background: transparent;
+    color: color(text-color);
+    font: system;
+}
+
+body {
+    flow: horizontal;
+    margin: 0;
+}
+
+toolbar {
+    display: block;
+    flow: horizontal;
+    width: max-content;
+    padding: 3 dip;
+    height: *;
+    background: transparent;
+}
