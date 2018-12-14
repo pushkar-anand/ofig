@@ -30,6 +30,24 @@ then
     sudo make install
 else
    echo "TRAVIS CI is running the build.\n No need to install latest cmake\n";
+       sudo apt remove cmake
+    sudo apt purge --auto-remove cmake
+
+    #cmake version
+    version=3.13
+    build=2
+    mkdir ~/tmp
+    cd ~/tmp
+
+    #get the cmake package
+    wget https://github.com/Kitware/CMake/releases/download/v${version}.${build}/cmake-${version}.${build}.tar.gz
+    tar -xzf cmake-${version}.${build}.tar.gz
+
+    #install cmake
+    cd cmake-${version}.${build}/
+    ./bootstrap
+    make -j4
+    sudo make install
 fi
 
 #verify installations

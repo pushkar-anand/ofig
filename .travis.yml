@@ -2,7 +2,7 @@ language: cpp
 compiler: gcc
 
 os: linux
-dist: trusty
+dist: xenial
 sudo: true
 
 addons:
@@ -25,6 +25,7 @@ before_install:
 
 install:
   - bash -x build-setup-deb.sh
+  - export PATH=$~/tmp/cmake/bin:${PATH}
 
 before_script:
   - bash -x pack-resources.sh
