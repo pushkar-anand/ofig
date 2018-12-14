@@ -16,7 +16,6 @@ bool isPHPInstalled() {
 
 void getPhpConfigDir() {
     string php_grep = exec("php -i | grep 'Configuration File' ");
-
 }
 
 
