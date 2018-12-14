@@ -55,7 +55,6 @@ public:
         FUNCTION_1("testImageAccess", test_image_access);
         FUNCTION_0("testImageGeneration", test_image_generation);
     END_FUNCTION_MAP
-
 };
 
 #endif //OFIG_FRAME_H
