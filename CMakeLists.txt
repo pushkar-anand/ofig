@@ -33,10 +33,12 @@ link_libraries("-ldl")
 link_libraries(${SCITER_BIN_GTK}/x64/libsciter-gtk.so)
 
 #Add tests
-add_executable(tests tests/test_base.cpp tests/php-detector-test.cpp)
+include_directories(tests)
+set(TEST_FILES tests/php-detector-test.cpp)
+add_executable(tests tests/test_base.cpp ${TEST_FILES})
 add_test(NAME MyTests COMMAND tests)
 
 
 #set source and add executables
 set(SOURCE_FILES ${SCITER_SDK_INCLUDE}/sciter-gtk-main.cpp)
-add_executable(ofig ${SOURCE_FILES} src/frame.h src/app.cpp)
+add_executable(ofig ${SOURCE_FILES} src/app.cpp)
