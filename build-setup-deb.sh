@@ -7,6 +7,13 @@ sudo apt install build-essential gcc g++ make
 #install gtk dev & gnome-devel
 sudo apt install libgtk-3-dev gnome-devel
 
+#Get and install catch testing library
+git clone https://github.com/catchorg/Catch2.git
+cd Catch2
+cmake -Bbuild -H. -DBUILD_TESTING=OFF
+sudo cmake --build build/ --target install
+rm -rf Catch2
+
 #remove existing cmake
 sudo apt remove cmake
 sudo apt purge --auto-remove cmake
