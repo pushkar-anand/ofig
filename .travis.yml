@@ -5,7 +5,7 @@ sudo: true
 
 before_install:
   - chmod +x build-setup.sh
-  - pack-resources
+  - chmod +x pack-resources.sh
 
 install:
   - ./build-setup.sh
