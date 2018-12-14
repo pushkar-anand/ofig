@@ -28,10 +28,15 @@ then
     ./bootstrap
     make -j4
     sudo make install
+
+    #verify installations
+    gcc -v
+    g++ -v
+    cmake --version
 else
    echo "TRAVIS CI is running the build.\n No need to install latest cmake\n";
-       sudo apt remove cmake
-    sudo apt purge --auto-remove cmake
+   sudo apt remove cmake
+   sudo apt purge --auto-remove cmake
 
     #cmake version
     version=3.13
@@ -48,9 +53,9 @@ else
     ./bootstrap
     make -j4
     sudo make install
-fi
 
-#verify installations
-gcc -v
-g++ -v
-cmake --version
+    #verify installations
+    gcc -v
+    g++ -v
+    /usr/local/bin/cmake --version
+fi

@@ -31,7 +31,8 @@ before_script:
   - bash -x pack-resources.sh
 
 script:
+  - pwd
   - mkdir -p build
   - cd build
-  - cmake -DCMAKE_BUILD_TYPE=Debug ..
+  - /usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug ..
   - make
