@@ -1,0 +1,20 @@
+language: cpp
+
+os: linux
+sudo: true
+
+before_install:
+  - chmod +x build-setup.sh
+  - pack-resources
+
+install:
+  - ./build-setup.sh
+
+before_script:
+  - ./pack-resources.sh
+
+script:
+  - mkdir -p build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ..
+  - make
