@@ -8,10 +8,10 @@ using namespace std;
 bool isPHPInstalled() {
     string result = exec("php -v");
     if (result.find("not found") != string::npos) {
-        cout << "PHP is installed" << '\n';
-        return true;
+        cout << "PHP is not installed" << '\n';
+        return false;
     }
-    return false;
+    return true;
 }
 
 void getPhpConfigDir() {
