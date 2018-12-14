@@ -10,6 +10,7 @@ int uimain(std::function<int()> run )
                     ALLOW_SOCKET_IO |
                     ALLOW_EVAL |
                     ALLOW_SYSINFO );
+    SciterSetOption(nullptr, SCITER_SET_DEBUG_MODE, TRUE);
 
     sciter::debug_output_console console; //- uncomment it if you will need console window
 

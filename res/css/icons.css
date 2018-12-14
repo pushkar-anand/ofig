@@ -1,0 +1,7 @@
+.search-icon {
+    outline: 0;
+    background-image: url("../icons/search.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

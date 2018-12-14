@@ -1,26 +1,103 @@
-html:theme(dark) {
-var(text-color): #fff;
-var(back-color): #000;
-var(disbaled-color): #aaa;
-}
+@import url("icons.css");
 
-html {
-var(accent-color): window-accent-color;
-    background: transparent;
-    color: color(text-color);
-    font: system;
-}
-
-body {
-    flow: horizontal;
+html, body {
+    padding: 0;
     margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
-toolbar {
+* {
+    box-sizing: border-box;
+}
+
+
+#toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4d4d4d;
+}
+
+ul#tool {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li.tool-item {
+    float: left;
     display: block;
-    flow: horizontal;
-    width: max-content;
-    padding: 3 dip;
-    height: *;
-    background: transparent;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.tool-item:hover {
+    background-color: #111;
+}
+
+#left-pane {
+    position: relative;
+    top: 43px;
+    max-width: 300px;
+    background-color: #215f89;
+}
+
+input[type='text']:empty {
+    color: gray;
+}
+
+
+div#search {
+    max-width: 300px;
+}
+
+
+input#search-input {
+    padding: 10px;
+    border: 1px solid #adadad;
+    color: #000000;
+    background-image: url('../icons/search.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    outline: 0;
+    border-radius: 5px;
+    width: 85%;
+}
+
+#config-list {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+#include {
+    position: absolute;
+    top: 43px;
+    left: 400px;
+    right: 0;
+}
+
+#config-list > h2 {
+    color: white;
+}
+
+#config-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#config-list ul > li {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
 }
