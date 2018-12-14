@@ -1,5 +1,6 @@
 #include "sciter-x-window.hpp"
 #include "sciter-x-graphics.hpp"
+#include <core/php-detector.h>
 #ifndef OFIG_FRAME_H
 #define OFIG_FRAME_H
 
@@ -24,40 +25,13 @@ static sciter::value native_api() {
 
 }
 
-static sciter::value test_image_access(const sciter::value &vimg)
-{
-    sciter::image img = sciter::image::from(vimg); /// failed in this code
-    UINT w, h;
-    img.dimensions(w,h);
-    sciter::bytes_writer bw;
-    img.save(bw, SCITER_IMAGE_ENCODING_RAW);
-    return sciter::value();
-}
-
-static sciter::value test_image_generation()
-{
-    BYTE pixmap[10 * 10 * 4];
-    memset(pixmap, 0, sizeof(pixmap));
-    // image data
-    for (int i = 0; i < 10 * 10 * 4; i += 4)
-    {
-        pixmap[i] = static_cast<BYTE>(i / 4);
-        pixmap[i + 1] = static_cast<BYTE>(255 - i / 4);
-        pixmap[i + 2] = 255;
-        pixmap[i + 3] = 255;
-    }
-    sciter::image img = sciter::image::create(10, 10, true, pixmap);
-    return img.to_value();
-}
-
 class frame: public sciter::window {
 public:
     frame() : window(SW_TITLEBAR | SW_CONTROLS | SW_MAIN | SW_GLASSY | SW_ENABLE_DEBUG) {}
 
     BEGIN_FUNCTION_MAP
     FUNCTION_0("nativeApi", native_api);
-    FUNCTION_1("testImageAccess", test_image_access);
-    FUNCTION_0("testImageGeneration", test_image_generation);
+        FUNCTION_0("isPHPInstalled", isPHPInstalled)
     END_FUNCTION_MAP
 
 };

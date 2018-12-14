@@ -14,5 +14,10 @@ bool isPHPInstalled() {
     return false;
 }
 
+void getPhpConfigDir() {
+    string php_grep = exec("php -i | grep 'Configuration File' ");
+
+}
+
 
 #endif //OFIG_PHP_DETECTOR_H
