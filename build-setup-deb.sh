@@ -2,7 +2,7 @@
 
 #install build tools
 sudo apt update
-sudo apt install build-essential gcc g++ make manpages-dev
+sudo apt install build-essential gcc g++ make
 
 #install gtk dev
 sudo apt install libgtk-3-dev
