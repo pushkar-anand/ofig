@@ -33,7 +33,7 @@ li.tool-item {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 5px 16px;
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ li.tool-item:hover {
 
 #left-pane {
     position: relative;
-    top: 43px;
+    top: 33px;
     max-width: 300px;
     background-color: #215f89;
 }
@@ -78,8 +78,10 @@ input#search-input {
 
 #include {
     position: absolute;
-    top: 43px;
+    top: 33px;
+    left: 320px;
     right: 0;
+    text-align: left;
 }
 
 #config-list > h2 {
