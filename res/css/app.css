@@ -79,7 +79,6 @@ input#search-input {
 #include {
     position: absolute;
     top: 43px;
-    left: 400px;
     right: 0;
 }
 
