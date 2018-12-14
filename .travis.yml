@@ -1,18 +1,31 @@
 language: cpp
+compiler: gcc
 
 os: linux
+dist: trusty
 sudo: true
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-6
+      - g++-6
+      - cmake
 
 before_install:
   - set -o xtrace
   - chmod +x build-setup-deb.sh
   - chmod +x pack-resources.sh
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
 
 install:
-  - ./build-setup-deb.sh
+  - bash -x build-setup-deb.sh
 
 before_script:
-  - ./pack-resources.sh
+  - bash -x pack-resources.sh
 
 script:
   - mkdir -p build
