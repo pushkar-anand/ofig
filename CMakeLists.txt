@@ -17,8 +17,14 @@ include_directories(${GTK3_INCLUDE_DIRS})
 link_directories(${GTK3_LIBRARY_DIRS})
 link_libraries(${GTK3_LIBRARIES})
 
+#Find and link Catch2
+find_package(Catch2 REQUIRED)
+include_directories(${CATCH_INCLUDE_DIRS})
+
+
 #Inlude source dirs
 include_directories(${SCITER_SDK_INCLUDE})
+include_directories(src)
 
 link_directories(${SCITER_BIN_GTK})
 
@@ -26,6 +32,9 @@ link_directories(${SCITER_BIN_GTK})
 link_libraries("-ldl")
 link_libraries(${SCITER_BIN_GTK}/x64/libsciter-gtk.so)
 
+#Add tests
+add_executable(tests tests/test_base.cpp tests/php-detector-test.cpp)
+add_test(NAME MyTests COMMAND tests)
 
 
 #set source and add executables
