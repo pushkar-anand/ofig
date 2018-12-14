@@ -4,6 +4,7 @@ os: linux
 sudo: true
 
 before_install:
+  - set -o xtrace
   - chmod +x build-setup-deb.sh
   - chmod +x pack-resources.sh
 

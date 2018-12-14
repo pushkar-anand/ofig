@@ -4,11 +4,8 @@
 sudo apt update
 sudo apt install build-essential gcc g++ make
 
-#install gtk dev
-sudo apt install libgtk-3-dev
-
-#install gnome-devel
-sudo apt-get install gnome-devel
+#install gtk dev & gnome-devel
+sudo apt install libgtk-3-dev gnome-devel
 
 #remove existing cmake
 sudo apt remove cmake
@@ -22,7 +19,7 @@ cd ~/tmp
 
 #get the cmake package
 wget https://github.com/Kitware/CMake/releases/download/v${version}.${build}/cmake-${version}.${build}.tar.gz
-tar -xzvf cmake-${version}.${build}.tar.gz
+tar -xzf cmake-${version}.${build}.tar.gz
 
 #install cmake
 cd cmake-${version}.${build}/
