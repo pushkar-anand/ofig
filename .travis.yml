@@ -1,0 +1,41 @@
+language: cpp
+compiler: gcc
+
+os: linux
+dist: xenial
+sudo: true
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-6
+      - g++-6
+      - cmake
+
+before_install:
+  - pwd
+  - chmod +x build-setup-deb.sh
+  - chmod +x pack-resources.sh
+  - sudo ln -s /usr/bin/gcc-6 /usr/local/bin/gcc
+  - sudo ln -s /usr/bin/g++-6 /usr/local/bin/g++
+  - gcc -v
+  - g++ -v
+  - cmake --version
+
+install:
+  - pwd
+  - bash -x build-setup-deb.sh
+  - export PATH=$~/tmp/cmake/bin:${PATH}
+
+before_script:
+  - pwd
+  - bash -x pack-resources.sh
+
+script:
+  - pwd
+  - mkdir -p build
+  - cd build
+  - /usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug ..
+  - make
