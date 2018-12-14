@@ -19,6 +19,7 @@ link_libraries(${GTK3_LIBRARIES})
 
 #Inlude source dirs
 include_directories(${SCITER_SDK_INCLUDE})
+include_directories(src)
 
 link_directories(${SCITER_BIN_GTK})
 
