@@ -1,6 +1,6 @@
 #include "sciter-x-window.hpp"
 #include "sciter-x-graphics.hpp"
-#include <core/php-detector.h>
+#include <core/core.h>
 #ifndef OFIG_FRAME_H
 #define OFIG_FRAME_H
 
