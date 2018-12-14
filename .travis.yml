@@ -3,11 +3,14 @@ language: cpp
 os: linux
 sudo: true
 
+before_install:
+  - chmod +x build-setup-deb.sh
+  - chmod +x pack-resources.sh
+
+install:
+  - ./build-setup-deb.sh
 
 before_script:
-  - chmod +x build-setup.sh
-  - chmod +x pack-resources.sh
-  - ./build-setup.sh
   - ./pack-resources.sh
 
 script:
