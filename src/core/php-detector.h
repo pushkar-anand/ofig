@@ -5,8 +5,13 @@
 
 using namespace std;
 
-void isPHPInstalled() {
-    cout << "Result: " << exec("php -v");
+bool isPHPInstalled() {
+    string result = exec("php -v");
+    if (result.find("not found") != string::npos) {
+        cout << "PHP is installed" << '\n';
+        return true;
+    }
+    return false;
 }
 
 
