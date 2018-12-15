@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include <string>
 #include <array>
+#include <sys/stat.h>
 
 
 using namespace std;
@@ -21,6 +22,11 @@ std::string execAndGetResult(const char *cmd) {
         result += buffer.data();
     }
     return result;
+}
+
+bool file_exists(const string &name) {
+    struct stat buffer{};
+    return (stat(name.c_str(), &buffer) == 0);
 }
 
 #endif //OFIG_HELPERS_H

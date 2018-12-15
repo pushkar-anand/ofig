@@ -36,7 +36,7 @@ link_libraries(${SCITER_BIN_GTK}/x64/libsciter-gtk.so)
 include_directories(tests)
 set(TEST_FILES tests/php-detector-test.cpp)
 add_executable(tests tests/test_base.cpp ${TEST_FILES})
-add_test(NAME MyTests COMMAND tests)
+add_test(tests UnitTests COMMAND tests)
 
 
 #set source and add executables
