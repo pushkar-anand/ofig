@@ -18,14 +18,7 @@ struct extension {
 };
 
 struct iniData {
-    //for PHP default config
-    extension php_default;
-    //for all other extensions
     vector<extension> ext_configs;
-
-    iniData() {
-        php_default.ext_name = "PHP";
-    }
 };
 
 
