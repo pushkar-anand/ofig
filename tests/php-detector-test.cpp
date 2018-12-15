@@ -7,6 +7,5 @@ TEST_CASE("Test PHP detector functions", "[php-detector]") {
         THEN("get PHP config dir") {
             REQUIRE(!getPhpConfigDir().empty());
         }
-
     }
 }
